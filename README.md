@@ -1,4 +1,4 @@
-# MCP TypeScript Starter
+# MCP Server TypeScript Starter
 
 This is a starter template for creating a Model Context Protocol (MCP) server using TypeScript. It provides a basic setup with a sample tool implementation to help you get started with building your own MCP server.
 
@@ -73,6 +73,31 @@ server.tool(
   },
 );
 ```
+
+## MCP Server Configuration
+
+You can configure multiple MCP servers in your project. Here's an example configuration:
+
+```json
+{
+    "mcpServers": {
+        "weather": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather",
+                "run",
+                "weather.py"
+            ]
+        }
+    }
+}
+```
+
+This configuration specifies:
+- A server named "weather" that runs a Python script using the `uv` command
+- The script is located at `/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/weather.py`
+- The `--directory` flag sets the working directory for the script
 
 ## License
 
